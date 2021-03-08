@@ -2,6 +2,7 @@ build
 dist
 node_modules
 out
+*.d.ts
 
 settings.json
 settings.json.*
