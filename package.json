@@ -3,7 +3,7 @@
     "productName": "Basket",
     "version": "0.5.2",
     "description": "Container app to bundle multiple web apps",
-    "main": "src/main.js",
+    "main": "src/main.ts",
     "repository": {
         "type": "git",
         "url": "https://github.com/basketapp/basket.git"
@@ -15,6 +15,7 @@
     },
     "homepage": "https://github.com/basketapp/basket#readme",
     "devDependencies": {
+        "@types/electron-settings": "^3.1.2",
         "copy-webpack-plugin": "^8.0",
         "cross-env": "^7.0.3",
         "deepmerge": "^4.2.2",

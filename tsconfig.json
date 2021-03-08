@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "types": ["vuetify"],
+        "types": ["vuetify", "electron-settings"],
         "target": "esnext",
         "module": "esnext",
         "allowJs": true,

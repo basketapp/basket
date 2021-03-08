@@ -7,7 +7,7 @@ const outputDir = 'build/';
 
 mix.setPublicPath(outputDir)
     .ts('src/renderer.js', outputDir)
-    .ts('src/main.js', outputDir)
+    .ts('src/main.ts', outputDir)
     .ts('src/library/menu/webviewContext.js', outputDir + 'services')
     .webpackConfig({
         target: 'electron-renderer',

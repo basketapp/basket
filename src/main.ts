@@ -6,12 +6,13 @@ import AppMenu from './library/menu/main';
 import ipcMainInit from './library/ipc/main';
 import { isDevMode } from './library/environment';
 
-let mainWindow;
-let forceQuit;
+let mainWindow: BrowserWindow;
+let forceQuit: boolean;
+
 const platform = os.platform();
 
 async function createWindow() {
-    const mainWindowStateKeeper = await windowStateKeeper('main'); // eslint-disable-line
+    const mainWindowStateKeeper = await windowStateKeeper('main');
 
     // Create the browser window.
     mainWindow = new BrowserWindow({
@@ -77,41 +78,55 @@ app.on('activate', () => {
     }
 });
 
-async function windowStateKeeper(windowName) {
-    let window;
-    let windowState;
+interface iWindowState {
+    isMaximized: boolean,
+    x: undefined | number,
+    y: undefined | number,
+    width: number,
+    height: number
+}
 
-    async function setBounds() {
-        // Restore from settings
-        if (await settings.has(`windowState.${windowName}`)) {
-            windowState = await settings.get(`windowState.${windowName}`);
-            return;
-        }
-        // Default
-        windowState = {
-            x: undefined,
-            y: undefined,
-            width: 960,
-            height: 680,
-        };
+interface iWindowStateKeeper extends iWindowState {
+    track(win: BrowserWindow): void,
+}
+
+async function windowStateKeeper(windowName: string): Promise<iWindowStateKeeper> {
+    let window: BrowserWindow;
+    let windowState: iWindowState;
+
+    windowState = {
+        isMaximized: false,
+        x: undefined,
+        y: undefined,
+        width: 960,
+        height: 680,
+    };
+
+    // Restore from settings
+    if (await settings.has(`windowState.${windowName}`)) {
+        // @ts-ignore
+        windowState = await settings.get(`windowState.${windowName}`);
     }
 
-    function saveState() {
+    function saveState(): void {
         if (!windowState.isMaximized) {
-            windowState = window.getBounds();
+            windowState = {
+                ...window.getBounds(),
+                isMaximized: false
+            };
         }
         windowState.isMaximized = window.isMaximized();
+        // @ts-ignore
         settings.set(`windowState.${windowName}`, windowState);
     }
 
-    function track(win) {
+    function track(win: BrowserWindow): void {
         window = win;
         ['resize', 'move', 'close'].forEach((event) => {
+            // @ts-ignore
             win.on(event, saveState);
         });
     }
-
-    await setBounds();
 
     return {
         x: windowState.x,
