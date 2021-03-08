@@ -8,8 +8,9 @@ import nl from '../resources/lang/nl.json';
 
 Vue.use(VueI18n);
 
+const locale = settings.getSync('settings.language');
 const i18n = new VueI18n({
-    locale: settings.getSync('settings.language') || 'en',
+    locale: locale?.toString() || 'en',
     fallbackLocale: 'en',
     messages: {
         en,

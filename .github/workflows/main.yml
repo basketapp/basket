@@ -1,6 +1,9 @@
 name: Build/release
 
-on: push
+on:
+  push:
+    branches:
+      - main
 
 jobs:
   release:
@@ -22,7 +25,7 @@ jobs:
       - name: Build/release Electron app
         uses: samuelmeuli/action-electron-builder@v1
         with:
-          build_script_name: "production"
+          build_script_name: "pre-dist"
 
           mac_certs: ${{ secrets.mac_certs }}
 

@@ -1,5 +1,5 @@
 // TODO: Turn into magic regex array.
-export default function decideService(url) {
+export default function decideService(url: string): undefined | string {
     if (url.includes('web.whatsapp.com')) {
         return 'whatsapp';
     }
