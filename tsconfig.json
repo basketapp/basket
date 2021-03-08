@@ -1,23 +1,25 @@
 {
     "compilerOptions": {
+        "types": ["vuetify"],
         "target": "esnext",
-        "module": "commonjs",
+        "module": "esnext",
         "allowJs": true,
         "checkJs": false,
-        "outDir": "dist",
+        "allowUnreachableCode": false,
         "rootDir": ".",
-        "strict": false,
+        "strict": true,
         "esModuleInterop": true /* Enables emit interoperability between CommonJS and ES Modules via creation of namespace objects for all imports. Implies 'allowSyntheticDefaultImports'. */,
         "forceConsistentCasingInFileNames": true /* Disallow inconsistently-cased references to the same file. */,
         "declaration": true /* Generates corresponding '.d.ts' file. */,
         "strictNullChecks": true,
         "resolveJsonModule": true,
+        "moduleResolution": "node",
         "sourceMap": true,
         "baseUrl": ".",
         "paths": {
             "*": ["*", "src/*"]
         }
     },
-    "exclude": ["node_modules", "dist", "out"],
+    "exclude": ["node_modules", "dist", "out", "build", "scripts"],
     "include": ["./src", "./test"]
 }
