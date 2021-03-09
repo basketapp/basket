@@ -46,10 +46,6 @@ ipcRenderer.once('init-recipe', (channel, message) => {
     });
 });
 
-ipcRenderer.once('set-search-providers', (channel, message) => {
-    window.searchProviders = message.providers;
-});
-
 setInterval(() => {
     const messageCount = window.checkMessageCount();
 

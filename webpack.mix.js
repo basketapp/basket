@@ -1,8 +1,6 @@
 const mix = require('laravel-mix');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
-require('vuetifyjs-mix-extension');
-
 const outputDir = 'build/';
 
 mix.setPublicPath(outputDir)
@@ -48,11 +46,15 @@ mix.setPublicPath(outputDir)
             __filename: true,
         },
     })
-    .vuetify('vuetify-loader')
     .vue({
-        version: 2,
+        version: 3,
         globalStyles: './src/resources/sass/all.scss',
     })
     .options({
         extractVueStyles: true,
+        vue: {
+            compilerOptions: {
+                isCustomElement: (tag) => tag === 'webview',
+            },
+        },
     });

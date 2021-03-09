@@ -1,6 +1,8 @@
 import Electron from 'electron';
 import GetWebview from '../webview';
-import i18n from '../../config/i18n';
+import { locale, en, nl } from '../i18n';
+
+const language = locale === 'en' ? en : nl;
 
 export default function ipcRendererInit(store) {
     function getActiveWebView() {
@@ -94,7 +96,7 @@ export default function ipcRendererInit(store) {
     Electron.ipcRenderer.on('removeService', async (event, identifier) => {
         if (
             // eslint-disable-next-line no-alert
-            window.confirm(i18n.t('confirm_delete_service'))
+            window.confirm(language.confirm_delete_service)
         ) {
             if (store.getters['panels/activePanelService'] === identifier) {
                 await store.dispatch('panels/hidePanels');

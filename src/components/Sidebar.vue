@@ -86,7 +86,7 @@
         .services {
             position: relative;
             width: 100%;
-            height: calc(100% - 242px);
+            height: calc(100% - 262px);
             margin-top: 8px;
             overflow-y: auto;
             list-style-type: none;

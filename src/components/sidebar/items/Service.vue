@@ -55,7 +55,10 @@
             },
 
             showContextMenu() {
-                ipcRenderer.send('show-service-tab-context-menu', this.service);
+                ipcRenderer.send(
+                    'show-service-tab-context-menu',
+                    JSON.stringify(this.service),
+                );
             },
 
             ...mapActions('services', ['setActive']),

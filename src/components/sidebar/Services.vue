@@ -1,28 +1,28 @@
 <template>
-    <SlickList lock-axis="y" :distance="2" v-model="services">
-        <SlickItem
+    <!-- eslint-disable vue/no-v-model-argument -->
+    <SortableList lock-axis="y" :distance="2" v-model:list="services">
+        <SortableItem
             v-for="(service, index) in services"
             :index="index"
             :key="index"
+            :item="service"
             class="slick-item"
-        >
-            <Service :service="service" />
-        </SlickItem>
-    </SlickList>
+        />
+    </SortableList>
+    <!-- eslint-enable -->
 </template>
 
 <script>
     import { ipcRenderer } from 'electron';
     import { mapActions, mapGetters } from 'vuex';
-    import { SlickList, SlickItem } from 'vue-slicksort';
-    import Service from './items/Service';
+    import SortableList from './SortableList.vue';
+    import SortableItem from './SortableItem.vue';
 
     export default {
         name: 'Services',
         components: {
-            SlickList,
-            SlickItem,
-            Service,
+            SortableList,
+            SortableItem,
         },
         computed: {
             services: {
@@ -45,9 +45,3 @@
         },
     };
 </script>
-
-<style lang="scss" scoped>
-    .slick-item {
-        z-index: 9999;
-    }
-</style>

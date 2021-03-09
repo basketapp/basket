@@ -1,36 +1,34 @@
 <template>
-    <v-app>
-        <div class="app">
-            <div class="draggable">&nbsp;</div>
+    <div class="app">
+        <div class="draggable">&nbsp;</div>
 
+        <div class="layout">
             <div class="layout">
-                <div class="layout">
-                    <Sidebar />
+                <Sidebar />
 
-                    <template v-if="currentActivePanel === 'service'">
-                        <Service />
-                    </template>
+                <template v-if="currentActivePanel === 'service'">
+                    <Service />
+                </template>
 
-                    <template v-else-if="currentActivePanel === 'preferences'">
-                        <Preferences />
-                    </template>
+                <template v-else-if="currentActivePanel === 'preferences'">
+                    <Preferences />
+                </template>
 
-                    <div class="content">
-                        <Webviews />
-                    </div>
+                <div class="content">
+                    <Webviews />
                 </div>
             </div>
         </div>
-    </v-app>
+    </div>
 </template>
 
 <script>
-    import { mapGetters } from 'vuex';
-    import { VApp } from 'vuetify/lib';
+    import { mapActions, mapGetters } from 'vuex';
     import Sidebar from './Sidebar';
     import Service from './panels/items/Service';
     import Preferences from './panels/items/Preferences';
     import Webviews from './Webviews';
+    import ipcRendererInit from '../library/ipc/renderer';
 
     export default {
         name: 'App',
@@ -39,7 +37,12 @@
             Sidebar,
             Webviews,
             Preferences,
-            VApp,
+        },
+        async created() {
+            await this.loadSettings();
+            await this.loadServices();
+
+            ipcRendererInit(this.$store);
         },
         computed: {
             currentActivePanel() {
@@ -48,6 +51,12 @@
         },
         methods: {
             ...mapGetters('panels', ['activePanel']),
+
+            ...mapGetters('services', ['getTotalNotificationCount']),
+
+            ...mapActions('settings', ['loadSettings']),
+
+            ...mapActions('services', ['loadServices']),
         },
     };
 </script>

@@ -1,4 +1,6 @@
-import i18n from '../../config/i18n';
+import { locale, en, nl } from '../i18n';
+
+const language = locale === 'en' ? en : nl;
 
 class ServiceContext {
     constructor(mainWindow, service) {
@@ -9,7 +11,7 @@ class ServiceContext {
                 accelerator: `CmdOrCtrl+${service.index + 1}`,
             },
             {
-                label: i18n.t('edit'),
+                label: language.edit,
                 click: () => {
                     mainWindow.webContents.send(
                         'editService',
@@ -22,7 +24,7 @@ class ServiceContext {
                 type: 'separator',
             },
             {
-                label: i18n.t('reload'),
+                label: language.reload,
                 click: async () => {
                     mainWindow.webContents.send(
                         'reloadService',
@@ -37,8 +39,8 @@ class ServiceContext {
             },
             {
                 label: service.soundEnabled
-                    ? i18n.t('sound_disable')
-                    : i18n.t('sound_enable'),
+                    ? language.sound_disable
+                    : language.sound_enable,
                 enabled: service.enabled,
                 click: () => {
                     mainWindow.webContents.send(
@@ -50,8 +52,8 @@ class ServiceContext {
             },
             {
                 label: service.notificationsEnabled
-                    ? i18n.t('notifications_disable')
-                    : i18n.t('notifications_enable'),
+                    ? language.notifications_disable
+                    : language.notifications_enable,
                 enabled: service.enabled,
                 click: () => {
                     mainWindow.webContents.send(
@@ -62,8 +64,8 @@ class ServiceContext {
             },
             {
                 label: service.enabled
-                    ? i18n.t('service_disable')
-                    : i18n.t('service_enable'),
+                    ? language.service_disable
+                    : language.service_enable,
                 click: () => {
                     mainWindow.webContents.send(
                         'toggleService',
@@ -75,7 +77,7 @@ class ServiceContext {
                 type: 'separator',
             },
             {
-                label: i18n.t('remove_service'),
+                label: language.remove_service,
                 enabled: true,
                 click: () => {
                     mainWindow.webContents.send(

@@ -1,6 +1,8 @@
 import { shell } from 'electron';
 import searchProviders from '../searchProviders';
-import i18n from '../../config/i18n';
+import { locale, en, nl } from '../i18n';
+
+const language = locale === 'en' ? en : nl;
 
 class WebviewContext {
     constructor(settings, selectedText) {
@@ -11,9 +13,10 @@ class WebviewContext {
             })
             .map((searchProvider) => {
                 return {
-                    label: `${i18n.t('search', {
-                        provider: searchProvider,
-                    })} "${
+                    label: `${language.search.replace(
+                        '{provider}',
+                        searchProvider,
+                    )} "${
                         selectedText.length > 15
                             ? `${selectedText.slice(0, 15)}...`
                             : selectedText

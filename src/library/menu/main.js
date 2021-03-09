@@ -1,8 +1,10 @@
 /* eslint indent: 0 */ // --> OFF
 import { isMac } from '../environment';
-import i18n from '../../config/i18n';
+import { locale, en, nl } from '../i18n';
 
 const { Menu, shell } = require('electron');
+
+const language = locale === 'en' ? en : nl;
 
 class AppMenu {
     constructor(mainWindow, services) {
@@ -15,7 +17,7 @@ class AppMenu {
                               { role: 'about' },
                               { type: 'separator' },
                               {
-                                  label: i18n.t('preferences'),
+                                  label: language.preferences,
                                   accelerator: 'CmdOrCtrl+,',
                                   click: async () => {
                                       mainWindow.webContents.send(
@@ -76,7 +78,7 @@ class AppMenu {
                     { role: 'forcereload' },
                     { role: 'toggledevtools' },
                     {
-                        label: i18n.t('open_service_developer_tools'),
+                        label: language.open_service_developer_tools,
                         click: () => {
                             mainWindow.webContents.send(
                                 'openServiceDeveloperTools',
@@ -85,21 +87,21 @@ class AppMenu {
                     },
                     { type: 'separator' },
                     {
-                        label: i18n.t('menu_actual_size'),
+                        label: language.menu_actual_size,
                         click: () => {
                             mainWindow.webContents.send('resetZoomLevel');
                         },
                         accelerator: `CmdOrCtrl+0`,
                     },
                     {
-                        label: i18n.t('menu_zoom_in'),
+                        label: language.menu_zoom_in,
                         click: () => {
                             mainWindow.webContents.send('addZoomLevel');
                         },
                         accelerator: `CmdOrCtrl+=`,
                     },
                     {
-                        label: i18n.t('menu_zoom_out'),
+                        label: language.menu_zoom_out,
                         click: () => {
                             mainWindow.webContents.send('substractZoomLevel');
                         },

@@ -1,24 +1,26 @@
 {
     "compilerOptions": {
-        "types": ["vuetify", "electron-settings"],
-        "target": "esnext",
-        "module": "esnext",
         "allowJs": true,
-        "checkJs": false,
         "allowUnreachableCode": false,
-        "rootDir": ".",
-        "strict": true,
+        "baseUrl": ".",
+        "checkJs": false,
+        "declaration": true /* Generates corresponding '.d.ts' file. */,
         "esModuleInterop": true /* Enables emit interoperability between CommonJS and ES Modules via creation of namespace objects for all imports. Implies 'allowSyntheticDefaultImports'. */,
         "forceConsistentCasingInFileNames": true /* Disallow inconsistently-cased references to the same file. */,
-        "declaration": true /* Generates corresponding '.d.ts' file. */,
-        "strictNullChecks": true,
-        "resolveJsonModule": true,
+        "module": "esnext",
         "moduleResolution": "node",
-        "sourceMap": true,
-        "baseUrl": ".",
+        "noUnusedParameters": true,
+        "outDir": "./build",
         "paths": {
             "*": ["*", "src/*"]
-        }
+        },
+        "resolveJsonModule": true,
+        "rootDir": ".",
+        "sourceMap": true,
+        "strict": true,
+        "strictNullChecks": true,
+        "types": ["electron-settings"],
+        "target": "esnext"
     },
     "exclude": ["node_modules", "dist", "out", "build", "scripts"],
     "include": ["./src", "./test"]

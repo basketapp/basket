@@ -1,12 +1,12 @@
 <template>
-    <div style="width: 100%;height: 100%;" :id="service.identifier">
+    <div style="width: 100%; height: 100%" :id="service.identifier">
         <webview
             autosize
             :key="service.identifier"
             class="innner-view"
             :src="service.url"
             preload="./services/preload.js"
-            style="width: 100%;height: 100%;"
+            style="width: 100%; height: 100%"
             :partition="'persist:service-' + service.identifier"
             :useragent="userAgent"
         ></webview>
@@ -17,7 +17,7 @@
     import { shell } from 'electron';
     import { mapActions, mapGetters } from 'vuex';
     import GetWebview from '../../library/webview';
-    import NotificationHandler from '../../library/ipc/NotificationHandler';
+    import notificationHandler from '../../library/ipc/notificationHandler';
     import decideService from '../../services/services';
 
     export default {
@@ -51,10 +51,6 @@
                         webview.send('init-recipe', {
                             recipe: decideService(service.url),
                         });
-
-                        webview.send('set-search-providers', {
-                            providers: this.getEnabledSearchProviders(),
-                        });
                     }
 
                     if (event.channel === 'update-icon') {
@@ -80,7 +76,7 @@
                         options.identifier = this.service.identifier;
                         options.title = event.args[0].title;
 
-                        new NotificationHandler( // eslint-disable-line
+                        new notificationHandler( // eslint-disable-line
                             event.args[0].notificationId,
                             options,
                             this.$store,

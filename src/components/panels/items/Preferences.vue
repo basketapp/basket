@@ -1,79 +1,9 @@
 <template>
-    <panel :title="$t('preferences')">
-        <v-container class="pa-6" fluid>
-            <form @submit.prevent="submit">
-                <v-row>
-                    <v-switch
-                        v-model="startWithOs"
-                        flat
-                        :label="$t('settings.boot_with_os')"
-                        disabled
-                    ></v-switch>
-                </v-row>
-                <v-row>
-                    <v-switch
-                        v-model="soundMuted"
-                        flat
-                        :label="$t('settings.disable_sound')"
-                    ></v-switch>
-                </v-row>
-                <v-row>
-                    <v-switch
-                        v-model="notificationsMuted"
-                        flat
-                        :label="$t('settings.disable_notifications')"
-                    ></v-switch>
-                </v-row>
-                <v-row>
-                    <v-switch
-                        v-model="dockBounce"
-                        flat
-                        :label="$t('settings.dock_bounce')"
-                    ></v-switch>
-                </v-row>
-
-                <v-divider></v-divider>
-
-                <v-row class="mt-4">
-                    <v-select
-                        v-model="selectedSearchProvider"
-                        :items="searchProviders"
-                        chips
-                        :label="$t('settings.enabled_search_providers')"
-                        multiple
-                    ></v-select>
-                </v-row>
-
-                <v-row class="mt-4">
-                    <v-select
-                        v-model="selectedLanguage"
-                        :items="languages"
-                        item-text="value"
-                        item-value="key"
-                        :label="$t('settings.language')"
-                    ></v-select>
-                </v-row>
-
-                <v-row>
-                    <v-btn type="submit">
-                        {{ $t('save') }}
-                    </v-btn>
-                </v-row>
-            </form>
-        </v-container>
-    </panel>
+    <panel :title="$t('preferences')">Preferences</panel>
 </template>
 
 <script>
     import { mapActions, mapGetters } from 'vuex';
-    import {
-        VBtn,
-        VContainer,
-        VDivider,
-        VRow,
-        VSelect,
-        VSwitch,
-    } from 'vuetify/lib';
     import Panel from '../Panel';
 
     export default {
@@ -95,12 +25,6 @@
         },
         components: {
             Panel,
-            VBtn,
-            VContainer,
-            VDivider,
-            VRow,
-            VSelect,
-            VSwitch,
         },
         mounted() {
             this.setFormValues();
