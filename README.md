@@ -1,5 +1,7 @@
 <p align="center"><img src="https://raw.githubusercontent.com/basketapp/basket/master/src/resources/static/basket.png" width="50"></p>
 
+[![Build/release](https://github.com/basketapp/basket/actions/workflows/main.yml/badge.svg)](https://github.com/basketapp/basket/actions/workflows/main.yml) [![audit](https://github.com/basketapp/basket/actions/workflows/audit.yml/badge.svg)](https://github.com/basketapp/basket/actions/workflows/audit.yml)
+
 ## Basket
 
 > **Note:** This contains a **non-final version**. Anything in this app can still be subject to change.
