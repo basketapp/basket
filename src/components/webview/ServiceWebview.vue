@@ -17,7 +17,7 @@
     import { shell } from 'electron';
     import { mapActions, mapGetters } from 'vuex';
     import GetWebview from '../../library/webview';
-    import notificationHandler from '../../library/ipc/notificationHandler';
+    import NotificationHandler from '../../library/ipc/NotificationHandler';
     import decideService from '../../services/services';
 
     export default {
@@ -76,7 +76,7 @@
                         options.identifier = this.service.identifier;
                         options.title = event.args[0].title;
 
-                        new notificationHandler( // eslint-disable-line
+                        new NotificationHandler( // eslint-disable-line
                             event.args[0].notificationId,
                             options,
                             this.$store,

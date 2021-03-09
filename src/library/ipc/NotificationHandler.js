@@ -2,7 +2,7 @@ import { v1 as uuidv1 } from 'uuid';
 import { ipcRenderer } from 'electron';
 import GetWebview from '../webview';
 
-class notificationHandler {
+class NotificationHandler {
     constructor(notificationId, options, store) {
         this.notificationId = notificationId;
         this.options = options;
@@ -54,4 +54,4 @@ class notificationHandler {
     }
 }
 
-export default notificationHandler;
+export default NotificationHandler;
