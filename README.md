@@ -1,4 +1,4 @@
-<p align="center"><img src="https://raw.githubusercontent.com/basketapp/basket/master/src/resources/static/basket.png" width="50"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/basketapp/basket/master/src/renderer/resources/static/basket.png" width="50"></p>
 
 [![Build/release](https://github.com/basketapp/basket/actions/workflows/main.yml/badge.svg)](https://github.com/basketapp/basket/actions/workflows/main.yml) [![audit](https://github.com/basketapp/basket/actions/workflows/audit.yml/badge.svg)](https://github.com/basketapp/basket/actions/workflows/audit.yml)
 
