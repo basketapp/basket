@@ -1,5 +1,5 @@
 import { shell } from 'electron';
-import searchProviders from '../searchProviders';
+import searchProviders from '../../renderer/library/searchProviders';
 import { locale, en, nl } from '../i18n';
 
 const language = locale === 'en' ? en : nl;
@@ -8,9 +8,8 @@ class WebviewContext {
     constructor(settings, selectedText) {
         const searchActions = settings
             .getSync('settings.enabledSearchProviders')
-            .filter((searchProvider) => {
-                return searchProvider in searchProviders;
-            })
+            .filter((searchProvider) => searchProvider in searchProviders)
+            // eslint-disable-next-line arrow-body-style
             .map((searchProvider) => {
                 return {
                     label: `${language.search.replace(

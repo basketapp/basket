@@ -1,0 +1,23 @@
+{
+    "edit": "Bewerken",
+
+    "menu_actual_size": "Originele grootte",
+    "menu_zoom_in": "Inzoomen",
+    "menu_zoom_out": "Uitzoomen",
+
+    "notifications_disable": "Zet notificaties uit",
+    "notifications_enable": "Zet notificaties aan",
+
+    "open_service_developer_tools": "Service Developer Tools openen",
+
+    "preferences": "Voorkeuren",
+
+    "reload": "Herladen",
+    "remove_service": "Dienst verwijderen",
+
+    "search": "Op {provider} zoeken naar",
+    "service_disable": "Zet dienst uit",
+    "service_enable": "Zet dienst aan",
+    "sound_disable": "Zet geluid uit",
+    "sound_enable": "Zet geluid aan"
+}

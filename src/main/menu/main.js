@@ -1,5 +1,5 @@
 /* eslint indent: 0 */ // --> OFF
-import { isMac } from '../environment';
+import { isMac } from '../../environment';
 import { locale, en, nl } from '../i18n';
 
 const { Menu, shell } = require('electron');

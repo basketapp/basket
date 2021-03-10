@@ -1,36 +1,18 @@
 {
     "add_service": "Dienst toevoegen",
 
-    "check_updates": "Controleer op updates",
-
     "close": "Sluiten",
-    "copy": "Kopiëren",
     "confirm_delete_service": "Weet je zeker dat je deze dienst wilt verwijderen?",
-    "cut": "Knippen",
 
     "edit": "Bewerken",
-
-    "internet_disconnected": "Niet verbonden met internet.",
 
     "language": {
         "en": "Engels",
         "nl": "Nederlands"
     },
 
-    "menu_actual_size": "Originele grootte",
-    "menu_zoom_in": "Inzoomen",
-    "menu_zoom_out": "Uitzoomen",
-
-    "notifications_disable": "Zet notificaties uit",
-    "notifications_enable": "Zet notificaties aan",
-
-    "open_service_developer_tools": "Service Developer Tools openen",
-
     "paste": "Plakken",
     "preferences": "Voorkeuren",
-
-    "reload": "Herladen",
-    "remove_service": "Dienst verwijderen",
 
     "save": "Opslaan",
     "settings": {
@@ -42,11 +24,6 @@
         "enabled_search_providers": "Ingeschakelde zoekmachines",
         "language": "Taal"
     },
-    "search": "Op {provider} zoeken naar",
-    "service_disable": "Zet dienst uit",
-    "service_enable": "Zet dienst aan",
-    "sound_disable": "Zet geluid uit",
-    "sound_enable": "Zet geluid aan",
 
     "title": "Titel",
 

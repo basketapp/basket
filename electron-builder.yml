@@ -1,29 +1,29 @@
 directories:
-    app: ./build
-    output: ./out
+  app: ./build
+  output: ./out
 
 appId: com.basketapp.basket
 
 compression: maximum
 
 linux:
-    icon: ./build/static/icons/app
-    category: Network;InstantMessaging;
-    executableName: basket
-    target:
-        - target: AppImage
-        - target: deb
-        - target: tar.gz
+  icon: ./build/static/icons/app
+  category: Network;InstantMessaging;
+  executableName: basket
+  target:
+    - target: AppImage
+    - target: deb
+    - target: tar.gz
 mac:
-    category: Network;InstantMessaging;
-    icon: './build/static/basket.png'
-    hardenedRuntime: true
-    gatekeeperAssess: false
+  category: Network;InstantMessaging;
+  icon: "./build/static/basket.png"
+  hardenedRuntime: true
+  gatekeeperAssess: false
 
 win:
-    icon: './build/static/basket.png'
-    target:
-        target: nsis
-        arch:
-            - x64
-            - ia32
+  icon: "./build/static/basket.png"
+  target:
+    target: nsis
+    arch:
+      - x64
+      - ia32

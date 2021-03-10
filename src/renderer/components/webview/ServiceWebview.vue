@@ -17,7 +17,7 @@
     import { shell } from 'electron';
     import { mapActions, mapGetters } from 'vuex';
     import GetWebview from '../../library/webview';
-    import NotificationHandler from '../../library/ipc/NotificationHandler';
+    import NotificationHandler from '../../ipc/NotificationHandler';
     import decideService from '../../services/services';
 
     export default {

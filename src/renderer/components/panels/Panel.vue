@@ -14,7 +14,7 @@
 
 <script>
     import { mapActions } from 'vuex';
-    import { isMac } from '../../library/environment';
+    import { isMac } from '../../../environment';
 
     export default {
         name: 'Panel',

@@ -1,6 +1,6 @@
 import Electron from 'electron';
-import GetWebview from '../webview';
-import { locale, en, nl } from '../i18n';
+import GetWebview from '../library/webview';
+import { locale, en, nl } from '../../main/i18n';
 
 const language = locale === 'en' ? en : nl;
 

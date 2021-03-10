@@ -1,6 +1,6 @@
 import { createI18n } from 'vue-i18n';
 
-import settings from '../library/settings';
+import settings from '../../settings';
 
 import en from '../resources/lang/en.json';
 import nl from '../resources/lang/nl.json';

@@ -1,0 +1,23 @@
+{
+    "edit": "Edit",
+
+    "menu_actual_size": "Actual size",
+    "menu_zoom_in": "Zoom in",
+    "menu_zoom_out": "Zoom out",
+
+    "notifications_disable": "Disable notifications",
+    "notifications_enable": "Enable notifications",
+
+    "open_service_developer_tools": "Open Service Developer Tools",
+
+    "preferences": "Preferences",
+
+    "reload": "Reload",
+    "remove_service": "Remove service",
+
+    "search": "Search {provider} for",
+    "service_disable": "Disable service",
+    "service_enable": "Enable service",
+    "sound_disable": "Disable sound",
+    "sound_enable": "Enable sound"
+}

@@ -1,8 +1,8 @@
 // TODO: make this file not necesary
-import settings from './settings';
+import settings from '../settings';
 
-import en from '../resources/lang/en.json';
-import nl from '../resources/lang/nl.json';
+import en from './lang/en.json';
+import nl from './lang/nl.json';
 
 const locale = settings.getSync('settings.language')?.toString();
 

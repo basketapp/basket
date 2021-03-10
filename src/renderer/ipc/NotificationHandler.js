@@ -1,6 +1,6 @@
 import { v1 as uuidv1 } from 'uuid';
 import { ipcRenderer } from 'electron';
-import GetWebview from '../webview';
+import GetWebview from '../library/webview';
 
 class NotificationHandler {
     constructor(notificationId, options, store) {

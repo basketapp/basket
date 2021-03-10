@@ -1,36 +1,18 @@
 {
     "add_service": "Add service",
 
-    "check_updates": "Check for updates",
-
     "close": "Close",
-    "copy": "Copy",
     "confirm_delete_service": "Are you sure you want to delete this service?",
-    "cut": "Cut",
 
     "edit": "Edit",
-
-    "internet_disconnected": "Not connected to the internet.",
 
     "language": {
         "en": "English",
         "nl": "Dutch"
     },
 
-    "menu_actual_size": "Actual size",
-    "menu_zoom_in": "Zoom in",
-    "menu_zoom_out": "Zoom out",
-
-    "notifications_disable": "Disable notifications",
-    "notifications_enable": "Enable notifications",
-
-    "open_service_developer_tools": "Open Service Developer Tools",
-
     "paste": "Paste",
     "preferences": "Preferences",
-
-    "reload": "Reload",
-    "remove_service": "Remove service",
 
     "save": "Save",
     "settings": {
@@ -42,11 +24,6 @@
         "enabled_search_providers": "Enabled search providers",
         "language": "Language"
     },
-    "search": "Search {provider} for",
-    "service_disable": "Disable service",
-    "service_enable": "Enable service",
-    "sound_disable": "Disable sound",
-    "sound_enable": "Enable sound",
 
     "title": "Title",
 

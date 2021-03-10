@@ -1,10 +1,10 @@
 import { app, BrowserWindow } from 'electron';
 import os from 'os';
 import { autoUpdater } from 'electron-updater';
-import settings from './library/settings';
-import AppMenu from './library/menu/main';
-import ipcMainInit from './library/ipc/main';
-import { isDevMode } from './library/environment';
+import settings from '../settings';
+import AppMenu from './menu/main';
+import ipcMainInit from './ipc/main';
+import { isDevMode } from '../environment';
 
 let mainWindow: BrowserWindow;
 let forceQuit: boolean;
@@ -28,6 +28,7 @@ async function createWindow() {
             contextIsolation: false,
             nodeIntegration: true,
             webviewTag: true,
+            enableRemoteModule: true // TODO: REMOVE THIS
         },
     });
 

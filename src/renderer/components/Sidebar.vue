@@ -25,7 +25,7 @@
     import MuteSound from './sidebar/items/MuteSound';
     import Preferences from './sidebar/items/Preferences';
     import Services from './sidebar/Services';
-    import { isMac } from '../library/environment';
+    import { isMac } from '../../environment';
 
     export default {
         name: 'Sidebar',

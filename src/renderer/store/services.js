@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
-import settings from '../library/settings';
+import settings from '../../settings';
 
 const state = {
     services: [],
@@ -11,6 +11,7 @@ const getters = {
         return state.services.filter((service) => service.visible === true)[0];
     },
 
+    // eslint-disable-next-line arrow-body-style
     allServices: (state) => {
         return state.services;
     },
@@ -39,9 +40,7 @@ const getters = {
         return state.services
             .filter((service) => service.enabled === true)
             .map((service) => service.notificationCount || 0)
-            .reduce((a, b) => {
-                return a + b;
-            });
+            .reduce((a, b) => a + b);
     },
 };
 

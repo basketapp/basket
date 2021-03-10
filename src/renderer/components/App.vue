@@ -28,7 +28,7 @@
     import Service from './panels/items/Service';
     import Preferences from './panels/items/Preferences';
     import Webviews from './Webviews';
-    import ipcRendererInit from '../library/ipc/renderer';
+    import ipcRendererInit from '../ipc/renderer';
 
     export default {
         name: 'App',
